@@ -11,12 +11,13 @@ export async function stepWithEvidence<T>(
   body: () => Promise<T>
 ): Promise<T> {
   return await test.step(name, async () => {
-    logger.debug(`Step started: ${name}`);
+    // Playwright's reporter already logs step execution
+    // Only log on failure
     try {
       const result = await body();
-      logger.info(`Step completed: ${name}`);
       return result;
     } catch (error) {
+      // Log errors for CI visibility
       logger.error(`Step failed: ${name}`, { error: String(error) });
       // Capture evidence on failure
       try {

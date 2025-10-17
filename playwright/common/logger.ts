@@ -26,7 +26,10 @@ export class Logger {
   private context: Record<string, any>;
 
   constructor(opts: LoggerOptions = {}) {
-    this.level = opts.level ?? (process.env.LOG_LEVEL as LogLevel) ?? 'info';
+    // CI: Only warnings and errors
+    // Local: Full info logging
+    const defaultLevel = process.env.CI ? 'warn' : 'info';
+    this.level = opts.level ?? (process.env.LOG_LEVEL as LogLevel) ?? defaultLevel;
     this.json = opts.json ?? true;
     this.context = opts.context ?? {};
   }
