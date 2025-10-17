@@ -1,0 +1,56 @@
+{
+  "validUsers": {
+    "standard": {
+      "username": "standard_user",
+      "password": "secret_sauce",
+      "description": "Standard user with full access"
+    },
+    "performance": {
+      "username": "performance_glitch_user", 
+      "password": "secret_sauce",
+      "description": "User with performance issues simulation"
+    },
+    "problemUser": {
+      "username": "problem_user",
+      "password": "secret_sauce", 
+      "description": "User with various site problems"
+    },
+    "errorUser": {
+      "username": "error_user",
+      "password": "secret_sauce",
+      "description": "User that encounters errors"
+    }
+  },
+  "invalidUsers": {
+    "locked": {
+      "username": "locked_out_user",
+      "password": "secret_sauce",
+      "description": "User that is locked out"
+    },
+    "invalidUsername": {
+      "username": "invalid_user",
+      "password": "secret_sauce",
+      "description": "Non-existent username"
+    },
+    "invalidPassword": {
+      "username": "standard_user",
+      "password": "wrong_password",
+      "description": "Correct username, wrong password"
+    },
+    "emptyCredentials": {
+      "username": "",
+      "password": "",
+      "description": "Empty username and password"
+    },
+    "emptyUsername": {
+      "username": "",
+      "password": "secret_sauce",
+      "description": "Empty username, valid password"
+    },
+    "emptyPassword": {
+      "username": "standard_user",
+      "password": "",
+      "description": "Valid username, empty password"
+    }
+  }
+}
