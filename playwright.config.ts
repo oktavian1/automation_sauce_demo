@@ -21,14 +21,24 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI
     ? [
-        // CI: Clean list output + HTML report
+        // CI: Clean list output + Allure report
         ['list'],
+        ['allure-playwright', {
+          outputFolder: 'allure-results',
+          detail: true,
+          suiteTitle: false,
+        }],
         ['html', { open: 'never' }],
         ['json', { outputFile: 'playwright-report/test-results.json' }],
       ]
     : [
-        // Local: Detailed output + HTML
+        // Local: Detailed output + Allure + HTML
         ['list'],
+        ['allure-playwright', {
+          outputFolder: 'allure-results',
+          detail: true,
+          suiteTitle: false,
+        }],
         ['html', { open: 'on-failure' }],
       ],
   

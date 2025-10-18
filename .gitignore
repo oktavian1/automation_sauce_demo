@@ -6,6 +6,10 @@ test-results/
 playwright-report/
 playwright/.cache/
 
+# Allure
+allure-results/
+allure-report/
+
 # Auth state (contains sensitive data)
 playwright/.auth/
 
